@@ -1,0 +1,39 @@
+h5 {
+	margin-top: 0 !important;
+}
+
+.negative {
+	color: #db2828 !important;
+	font-weight: bold;
+}
+
+.positive {
+	color: #21ba45 !important;
+	font-weight: bold;
+}
+
+.pusher > .ui.teal.inverted.segment {
+	border-radius: 0;
+}
+
+.sidebar {
+    min-width: 19em;
+}
+
+.ui.checkbox > label {
+	color: white !important;
+	padding-bottom: 1em;
+}
+
+.ui.teal.segment > h4 {
+	text-align: center;
+}
+
+.ui.three.column > .column {
+	padding-left: 0;
+}
+
+.warn-msg {
+	padding-top: 1em;
+	color: red;
+}
