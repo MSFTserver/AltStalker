@@ -28,6 +28,7 @@
 	<!-- Cryptocoins Icons -->
 	<link rel="stylesheet" href="./cryptocoins/webfont/cryptocoins.css" />
 	<link rel="stylesheet" href="./cryptocoins/webfont/cryptocoins-colors.css" />
+	<script src="js/themeswitcher.js"></script>
 
 	<!--
 		TODO:
@@ -40,317 +41,10 @@
 	 -->
 
 	<!-- Page style -->
-	<style>
-		/*!
-		 * Start Bootstrap - SB Admin 2 v3.3.7+1 (http://startbootstrap.com/template-overviews/sb-admin-2)
-		 * Copyright 2013-2016 Start Bootstrap
-		 * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
-		 */
-		body {
-		  background-color: #f8f8f8;
-		}
-
-		.disabled-label {
-			color: grey;
-		}
-
-		.cc-row.row, .ca-row.row {
-			margin-left:0;
-			margin-right:0;
-		}
-
-		.cc-row-bag-item {
-			margin: 0 5px;
-		}
-
-		#totals-chart > svg { width: 100% !important; }
-		#totals-chart-diff > svg { width: 100% !important; }
-		#totals-chart-breakdown > svg { width: 100% !important; }
-		#totals-chart-breakdown-pie > svg { width: 100% !important; }
-		#comparison-chart > svg { width: 100% !important; }
-		#comparison-price-chart > svg { width: 100% !important; }
-
-		ul.donate {
-			list-style: none;
-		}
-
-		#wrapper {
-		  width: 100%;
-		}
-		#page-wrapper {
-		  padding: 0 15px;
-		  min-height: 568px;
-		  background-color: white;
-		}
-		.small-page-header {
-			margin: 14px 0px;
-		}
-		.page-header {
-			margin-top: 20px;
-		}
-		.cc-trade-value, .cc-value {
-			padding: 4px;
-		}
-		.cc-input-addon-span {
-			padding: 8px;
-		}
-		@media (min-width: 768px) {
-		  #page-wrapper {
-		    position: inherit;
-		    margin: 0 0 0 175px;
-		    padding: 0 30px;
-		    border-left: 1px solid #e7e7e7;
-		  }
-		}
-		@media (max-width: 768px) {
-		  .half-padding {
-		  	padding-left:7.5px;
-		  	padding-right:7.5px;
-		  }
-		  .page-wrapper-buffer {
-		    margin: 0px 8px;
-		  }
-		  .pm-th-tr-event {
-		  	font-size:80%;
-		  }
-		}
-		.navbar-top-links {
-		  margin-right: 0;
-		}
-		.navbar-top-links li {
-		  display: inline-block;
-		}
-		.navbar-top-links li:last-child {
-		  margin-right: 15px;
-		}
-		.navbar-top-links li a {
-		  padding: 15px;
-		  min-height: 50px;
-		}
-		.navbar-top-links .dropdown-menu li {
-		  display: block;
-		}
-		.navbar-top-links .dropdown-menu li:last-child {
-		  margin-right: 0;
-		}
-		.navbar-top-links .dropdown-menu li a {
-		  padding: 3px 20px;
-		  min-height: 0;
-		}
-		.navbar-top-links .dropdown-menu li a div {
-		  white-space: normal;
-		}
-		.navbar-top-links .dropdown-messages,
-		.navbar-top-links .dropdown-tasks,
-		.navbar-top-links .dropdown-alerts {
-		  width: 310px;
-		  min-width: 0;
-		}
-		.navbar-top-links .dropdown-messages {
-		  margin-left: 5px;
-		}
-		.navbar-top-links .dropdown-tasks {
-		  margin-left: -59px;
-		}
-		.navbar-top-links .dropdown-alerts {
-		  margin-left: -123px;
-		}
-		.sidebar .sidebar-nav.navbar-collapse {
-		  padding-left: 0;
-		  padding-right: 0;
-		}
-		.sidebar .sidebar-search {
-		  padding: 15px;
-		}
-		.sidebar ul li {
-		  border-bottom: 1px solid #e7e7e7;
-		}
-		.sidebar ul li a.active {
-		  background-color: #eeeeee;
-		}
-		.sidebar .arrow {
-		  float: right;
-		}
-		.sidebar .fa.arrow:before {
-		  content: "\f104";
-		}
-		.sidebar .active > a > .fa.arrow:before {
-		  content: "\f107";
-		}
-		.sidebar .nav-second-level li,
-		.sidebar .nav-third-level li {
-		  border-bottom: none !important;
-		}
-		.sidebar .nav-second-level li a {
-		  padding-left: 37px;
-		}
-		.sidebar .nav-third-level li a {
-		  padding-left: 52px;
-		}
-		@media (min-width: 768px) {
-		  .sidebar {
-		    z-index: 1;
-		    position: absolute;
-		    width: 175px;
-		    margin-top: 51px;
-		  }
-		  .navbar-top-links .dropdown-messages,
-		  .navbar-top-links .dropdown-tasks,
-		  .navbar-top-links .dropdown-alerts {
-		    margin-left: auto;
-		  }
-		}
-		.btn-outline {
-		  color: inherit;
-		  background-color: transparent;
-		  transition: all .5s;
-		}
-		.btn-primary.btn-outline {
-		  color: #428bca;
-		}
-		.btn-success.btn-outline {
-		  color: #5cb85c;
-		}
-		.btn-info.btn-outline {
-		  color: #5bc0de;
-		}
-		.btn-warning.btn-outline {
-		  color: #f0ad4e;
-		}
-		.btn-danger.btn-outline {
-		  color: #d9534f;
-		}
-		.btn-primary.btn-outline:hover,
-		.btn-success.btn-outline:hover,
-		.btn-info.btn-outline:hover,
-		.btn-warning.btn-outline:hover,
-		.btn-danger.btn-outline:hover {
-		  color: white;
-		}
-		.flot-chart {
-		  display: block;
-		  height: 400px;
-		}
-		.flot-chart-content {
-		  width: 100%;
-		  height: 100%;
-		}
-		table.dataTable thead .sorting,
-		table.dataTable thead .sorting_asc,
-		table.dataTable thead .sorting_desc,
-		table.dataTable thead .sorting_asc_disabled,
-		table.dataTable thead .sorting_desc_disabled {
-		  background: transparent;
-		}
-		table.dataTable thead .sorting_asc:after {
-		  content: "\f0de";
-		  float: right;
-		  font-family: fontawesome;
-		}
-		table.dataTable thead .sorting_desc:after {
-		  content: "\f0dd";
-		  float: right;
-		  font-family: fontawesome;
-		}
-		table.dataTable thead .sorting:after {
-		  content: "\f0dc";
-		  float: right;
-		  font-family: fontawesome;
-		  color: rgba(50, 50, 50, 0.5);
-		}
-		.btn-circle {
-		  width: 30px;
-		  height: 30px;
-		  padding: 6px 0;
-		  border-radius: 15px;
-		  text-align: center;
-		  font-size: 12px;
-		  line-height: 1.428571429;
-		}
-		.btn-circle.btn-lg {
-		  width: 50px;
-		  height: 50px;
-		  padding: 10px 16px;
-		  border-radius: 25px;
-		  font-size: 18px;
-		  line-height: 1.33;
-		}
-		.btn-circle.btn-xl {
-		  width: 70px;
-		  height: 70px;
-		  padding: 10px 16px;
-		  border-radius: 35px;
-		  font-size: 24px;
-		  line-height: 1.33;
-		}
-		.show-grid [class^="col-"] {
-		  padding-top: 10px;
-		  padding-bottom: 10px;
-		  border: 1px solid #ddd;
-		  background-color: #eee !important;
-		}
-		.show-grid {
-		  margin: 15px 0;
-		}
-		.huge {
-		  font-size: 30px;
-		}
-		.large {
-		  font-size: 18px;
-		}
-		@media (min-width: 992px) {
-			.huge {
-			  font-size: 34px;
-			}
-			.large {
-			  font-size: 20px;
-			}
-		}
-		.panel-green {
-		  border-color: #5cb85c;
-		}
-		.panel-green > .panel-heading {
-		  border-color: #5cb85c;
-		  color: white;
-		  background-color: #5cb85c;
-		}
-		.panel-green > a {
-		  color: #5cb85c;
-		}
-		.panel-green > a:hover {
-		  color: #3d8b3d;
-		}
-		.panel-red {
-		  border-color: #d9534f;
-		}
-		.panel-red > .panel-heading {
-		  border-color: #d9534f;
-		  color: white;
-		  background-color: #d9534f;
-		}
-		.panel-red > a {
-		  color: #d9534f;
-		}
-		.panel-red > a:hover {
-		  color: #b52b27;
-		}
-		.panel-yellow {
-		  border-color: #f0ad4e;
-		}
-		.panel-yellow > .panel-heading {
-		  border-color: #f0ad4e;
-		  color: white;
-		  background-color: #f0ad4e;
-		}
-		.panel-yellow > a {
-		  color: #f0ad4e;
-		}
-		.panel-yellow > a:hover {
-		  color: #df8a13;
-		}
-	</style>
+<link rel="stylesheet" type="text/css" title="light" href="css/light.css">
+<link rel="alternate stylesheet" type="text/css" title="dark" href="css/dark.css">
 </head>
-<body>
+<body onload="set_style_from_cookie()">
 	<!-- Navigation -->
 	<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
 		<div class="navbar-header">
@@ -376,7 +70,10 @@
 				</div>
 			</div>
 		</div>
-
+		<form id="theme-select"> Themes:
+				<input onclick="switch_style('light');return false;" name="theme" id="light" value="light" type="submit">
+				<input onclick="switch_style('dark');return false;" name="theme" id="dark" value="dark" type="submit">
+		</form>
 		<div class="navbar-default sidebar menu-navbar" role="navigation">
 			<div class="sidebar-nav navbar-collapse sidebar-navbar-collapse collapse">
 				<ul class="nav" id="side-menu">
@@ -1105,6 +802,21 @@
 							</div>
 						</div>
 					</div>
+					<div class="panel-body">
+						<div class="col-xs-6 col-sm-3 form-group">
+							<div class="input-group">
+								<label>Theme Selector</label>
+							</div>
+						</div>
+						<div class="col-xs-6 col-sm-3 form-group">
+							<div class="input-group">
+							<form>
+							    <input type="submit" onclick="switch_style('light');return false;" name="theme" id="light" value="light"></option>
+							    <input type="submit" onclick="switch_style('dark');return false;" name="theme" id="dark" value="dark"></option>
+							 </form>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -1369,7 +1081,7 @@
 	<script src="libs/js/socket.io-1.7.2.min.js"></script>
 
 	<!-- CryptoCompare Streamer Utils -->
-	<script src="./ccc-streamer-utilities.js"></script>
+	<script src="js/ccc-streamer-utilities.js"></script>
 
 
 	<!-- Logic -->
