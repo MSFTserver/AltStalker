@@ -1,6 +1,6 @@
 // *** TO BE CUSTOMISED ***
 
-var style_cookie_name = "themes" ;
+var style_cookie_name = "_themes" ;
 var style_cookie_duration = 30 ;
 var style_domain = "invest.msft.online" ;
 
@@ -50,11 +50,9 @@ function get_cookie ( cookie_name )
     // https://www.thesitewizard.com/javascripts/cookies.shtml
     var cookie_string = document.cookie ;
     if (cookie_string.length != 0) {
-        var cookie_value = cookie_string.match (
-                        '(^|;)[\s]*' +
-                        cookie_name +
-                        '=([^;]*)' );
-        return decodeURIComponent ( cookie_value[2] ) ;
+        var cookie_value = Cookies.get(cookie_name);
+                        console.log(cookie_string);
+        return decodeURIComponent ( cookie_value ) ;
     }
     return '' ;
 }

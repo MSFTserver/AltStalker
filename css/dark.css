@@ -1,78 +1,11 @@
+/*!
+ * Start Bootstrap - SB Admin 2 v3.3.7+1 (http://startbootstrap.com/template-overviews/sb-admin-2)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
 body {
-    color: #5e5e5e;
-    background-color: black;
-}
-#page-wrapper {
-    background-color: black;
-    border-left: 1px solid #5e5e5e;
-}
-.page-header {
-    border-bottom: 1px solid #5e5e5e;
-}
-.panel-footer {
-    background-color: black;
-    border-top: 1px solid black;
-}
-.form-control {
-    color: #5e5e5e;
-    background-color: black;
-}
-.navbar-default {
-    background-color: black;
-    border-color: #5e5e5e;
-}
-#theme-select {
-    float: right;
-}
-.sidebar ul li {
-    border-bottom: 1px solid #5e5e5e;
-}
-.nav > li > a:focus, .nav > li > a:hover {
-    background-color: #727272;
-}
-.panel-primary > .panel-heading {
-    color: black;
-}
-.ui-widget.ui-widget-content {
-    border: 1px solid #5e5e5e;
-}
-.ui-widget-content {
-    background: black;
-    color: #5e5e5e;
-}
-.table-striped > tbody > tr:nth-of-type(2n+1) {
-    background-color: #1d1d1d;
-}
-.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
-    border-top: 1px solid #5e5e5e;
-}
-.table > thead > tr > th {
-    border-bottom: 2px solid #5e5e5e;
-}
-.col-xs-12.col-sm-5 {
-    background: #272727;
-    border: 2px solid #272727;
-    border-radius: 200px;
-}
-.panel {
-    background-color: black;
-}
-.panel-default {
-    border-color: #5e5e5e;
-}
-.table-hover > tbody > tr:hover {
-    background-color: #272727;
-}
-.panel-default > .panel-heading {
-    color: #5e5e5e;
-    background-color: black;
-    border-color: #5e5e5e;
-}
-.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
-    background-color: black;
-}
-.form-control {
-    border: 1px solid #5e5e5e;
+  color: #5e5e5e;
+  background-color: black;
 }
 
 .disabled-label {
@@ -105,12 +38,15 @@ ul.donate {
 #page-wrapper {
   padding: 0 15px;
   min-height: 568px;
+  background-color: black;
+  border-left: 1px solid #5e5e5e;
 }
 .small-page-header {
   margin: 14px 0px;
 }
 .page-header {
   margin-top: 20px;
+  border-bottom: 1px solid #5e5e5e;
 }
 .cc-trade-value, .cc-value {
   padding: 4px;
@@ -123,7 +59,8 @@ ul.donate {
     position: inherit;
     margin: 0 0 0 175px;
     padding: 0 30px;
-    border-left: 1px solid #e7e7e7;
+    background-color: black;
+    border-left: 1px solid #5e5e5e;
   }
 }
 @media (max-width: 768px) {
@@ -137,6 +74,13 @@ ul.donate {
   .pm-th-tr-event {
     font-size:80%;
   }
+}
+.navbar-default {
+    background-color: black;
+    border-color: #5e5e5e;
+}
+.nav > li > a:focus, .nav > li > a:hover {
+    background-color: #727272;
 }
 .navbar-top-links {
   margin-right: 0;
@@ -179,6 +123,9 @@ ul.donate {
 .navbar-top-links .dropdown-alerts {
   margin-left: -123px;
 }
+#theme-select {
+    float: right;
+}
 .sidebar .sidebar-nav.navbar-collapse {
   padding-left: 0;
   padding-right: 0;
@@ -187,7 +134,7 @@ ul.donate {
   padding: 15px;
 }
 .sidebar ul li {
-  border-bottom: 1px solid #e7e7e7;
+  border-bottom: 1px solid #5e5e5e;
 }
 .sidebar ul li a.active {
   background-color: #eeeeee;
@@ -329,6 +276,56 @@ table.dataTable thead .sorting:after {
   .large {
     font-size: 20px;
   }
+}
+.ui-widget.ui-widget-content {
+    border: 1px solid #5e5e5e;
+}
+.ui-widget-content {
+    background: black;
+    color: #5e5e5e;
+}
+.table-striped > tbody > tr:nth-of-type(2n+1) {
+    background-color: #1d1d1d;
+}
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+    border-top: 1px solid #5e5e5e;
+}
+.table > thead > tr > th {
+    border-bottom: 2px solid #5e5e5e;
+}
+.table-hover > tbody > tr:hover {
+    background-color: #272727;
+}
+.col-xs-12.col-sm-5 {
+    background: #272727;
+    border: 2px solid #272727;
+    border-radius: 200px;
+}
+.form-control {
+    color: #5e5e5e;
+    background-color: black;
+    border: 1px solid #5e5e5e;
+}
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+    background-color: black;
+}
+.panel {
+    background-color: black;
+}
+.panel-default {
+    border-color: #5e5e5e;
+}
+.panel-default > .panel-heading {
+    color: #5e5e5e;
+    background-color: black;
+    border-color: #5e5e5e;
+}
+.panel-primary > .panel-heading {
+    color: black;
+}
+.panel-footer {
+    background-color: black;
+    border-top: 1px solid black;
 }
 .panel-green {
   border-color: #5cb85c;
