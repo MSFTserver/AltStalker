@@ -13,7 +13,7 @@
 	<!-- jQuery UI -->
 	<link rel="stylesheet" href="libs/css/jquery-ui-1.12.1.min.css" />
 	<script src="libs/js/jquery.cookie.min.js"></script>
-	
+
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="libs/css/font-awesome-4.7.0.min.css" />
 
@@ -71,10 +71,6 @@
 				</div>
 			</div>
 		</div>
-		<form id="theme-select"> Themes:
-				<input onclick="switch_style('light');return false;" name="theme" id="light" value="light" type="submit">
-				<input onclick="switch_style('dark');return false;" name="theme" id="dark" value="dark" type="submit">
-		</form>
 		<div class="navbar-default sidebar menu-navbar" role="navigation">
 			<div class="sidebar-nav navbar-collapse sidebar-navbar-collapse collapse">
 				<ul class="nav" id="side-menu">
@@ -811,10 +807,10 @@
 						</div>
 						<div class="col-xs-6 col-sm-3 form-group">
 							<div class="input-group">
-							<form>
-							    <input type="submit" onclick="switch_style('light');return false;" name="theme" id="light" value="light"></option>
-							    <input type="submit" onclick="switch_style('dark');return false;" name="theme" id="dark" value="dark"></option>
-							 </form>
+							<select class="settings-select-theme form-control">
+							    <option type="submit" onclick="switch_style('light');return false;" name="theme" id="light" value="light">Light</option>
+							    <option type="submit" onclick="switch_style('dark');return false;" name="theme" id="dark" value="dark">Dark</option>
+							 </select>
 							</div>
 						</div>
 					</div>
@@ -889,7 +885,6 @@
 								<th>Watch</th>
 								<th>Condition</th>
 								<th>Value</th>
-								<th class="ca-th-active hidden-xs">Email</th>
 								<th>Edit</th>
 							</tr>
 						</thead>
@@ -979,14 +974,6 @@
 									<input type="number" class="form-control ca-compare-value"></input>
 									<span class="input-group-addon ca-input-addon-span ca-abbr-crypto-compare" style="display:none;">BTC</span>
 								</div>
-							</div>
-						</div>
-						<div class="panel-footer">&nbsp;
-							<div class="input-group" style="float:right;">
-								<label class="form-check-label disabled-label">
-									<input type="checkbox" class="form-check-input ca-alert-active-cb" disabled>
-									Email Alert
-								</label>
 							</div>
 						</div>
 					</div>
@@ -1161,9 +1148,6 @@
 			// Handle any operations whether the user is logged in or out
 			updateUserProfile();
 
-			// See if the user is verifying their account
-			checkVerification();
-
 			// Get the fiat exchange rates
 			$.getJSON("https://api.fixer.io/latest?base=USD", function(data) {
 				$.each(fiat_currencies, function(k, v) {
@@ -1172,7 +1156,7 @@
 				});
 			});
 
-			$.getJSON('https://api.coinmarketcap.com/v1/ticker/?limit=250', function(data) {
+			$.getJSON('https://api.coinmarketcap.com/v1/ticker/?limit=1000', function(data) {
 				var items = [];
 
 				$.each(data, function(key, crypto) {
@@ -1236,8 +1220,10 @@
 			$('.price-watch-add-btn').click(addWatchedCoin);
 
 			// Settings
+			var theme = Cookies.get('_themes')
 			$('.settings-select-fiat').change(setFiat);
 			$('.settings-select-fiat').change(saveSettings);
+			$('.settings-select-theme').val(theme);
 
 			// Portfolio management
 			$('.cc-add-coin').click(addNewTrade);
@@ -1248,10 +1234,7 @@
 			$('.ca-add-alert').click(addNewAlert);
 
 			// User management
-			$('.logout-button').click(logOut);
-			$('.welcome-message-dismiss').click(dismissWelcome)
 			$('.toggle-at-a-glance').click(toggleAtAGlance);
-			$('.reg-confirm-verify-login').click(openLoginModal);
 
 			// Charts
 			$('.comp-chart-time').click(changeComparisonChartTimescale);
@@ -1300,30 +1283,6 @@
 				saveSettings();
 			}
 
-			function openLoginModal() {
-				$('#login-modal').modal('show');
-			}
-
-			function dismissWelcome() {
-				$(this).closest('.welcome-message').hide();
-				localStorage.setItem('hide-welcome-message', true);
-			}
-
-			function checkVerification() {
-				var param = findGetParameter('verify_user');
-				if (param && param.length == 48) {
-					// Verify the user
-					$.post('https://www.10k.about/api/User/verify', {verification_code: param})
-					.done(function(data) {
-						if (data.hasOwnProperty('success') && data['success']) {
-							// Show the registration success modal
-							var $confirm_modal = $('#reg-confirm-verify-modal');
-							$confirm_modal.modal('show');
-						}
-					});
-				}
-			}
-
 			function toggleAtAGlance() {
 				if ($('.at-a-glance').is(":visible")) {
 					$('.at-a-glance').hide();
@@ -1338,37 +1297,6 @@
 				}
 			}
 
-			function logOut() {
-				// Determine if we're storing locally or clearing out
-				var bStoreLocal = !!$(this).hasClass('logout-button-store-local');
-
-				// Get the parent modal
-				var $modal = $(this).closest('div.modal');
-
-				$.post('https://www.10k.pizza/api/User/logout')
-				 .done(function(data) {
-				 	if (data.hasOwnProperty('success') && data['success']) {
-						updateUserProfile();
-						$modal.modal('hide');
-
-						if (!bStoreLocal) {
-							// Wipe out the trades & alerts
-							cryptofolio.trades = [];
-							cryptofolio.alerts = [];
-
-							// Reload the data on the page
-							save(true);
-							load();
-						} else {
-							save(true);
-						}
-
-				 	} else {
-				 		alert(data['error']);
-				 	}
-				});
-			}
-
 			function updateUserProfile() {
 				var bHideWelcome = localStorage.getItem('hide-welcome-message');
 				if (bHideWelcome != "true") {
@@ -1381,14 +1309,6 @@
 					$('.at-a-glance').hide();
 					$('.toggle-at-a-glance').find('i.fa').removeClass().addClass('fa fa-plus');
 					$('.toggle-at-a-glance').find('span').html("Show");
-				}
-
-				if (loggedIn()) {
-					$('.user-logged-in').show();
-					$('.user-not-logged-in').hide();
-				} else {
-					$('.user-not-logged-in').show();
-					$('.user-logged-in').hide();
 				}
 			}
 
@@ -1777,21 +1697,6 @@
 				$editRow.find('.ca-select-compare').val($thRow.find('.ca-td-compare-to').data('compare-to'));
 				$editRow.find('.ca-compare-value').val($thRow.find('.ca-td-compare-to').data('compare-to-value'));
 				$editRow.data('alert-date', $thRow.data('alert-date'));
-
-				// If we're logged in, enable the email alert checkbox
-				if (loggedIn()) {
-					// Get the checkbox value
-					var bIsChecked = $thRow.find('.ca-td-active').data('alert-active');
-
-					// Handle case where no value is provided - new alert
-					if (bIsChecked === "") {
-						bIsChecked = true;
-					}
-
-					$editRow.find('.ca-alert-active').data('alert-active', bIsChecked);
-					$editRow.find('.ca-alert-active-cb').prop("checked", bIsChecked);
-					$editRow.find('.ca-alert-active-cb').prop("disabled", false).closest('label').removeClass('disabled-label');
-				}
 
 				updateSelectionCompareSymbol.call($editRow);
 				setAlertRowEvents($editRow);
@@ -2818,13 +2723,6 @@
 				var json_settings = JSON.stringify(settings);
 
 				localStorage.setItem('settings', json_settings);
-
-				if (loggedIn()) {
-					$.post('https://www.10k.pizza/api/User/saveSettings', { settings : json_settings })
-					 .done(function(data) {
-					 	console.log(data);
-					});
-				}
 			}
 
 			function loadSettings() {
@@ -2868,16 +2766,8 @@
 				// Prepare the portfolio for storage
 				var json_portfolio = JSON.stringify(cryptofolio.trades);
 
-				// If we're logged in, save to the server
-				if (!bLocalOnly && loggedIn()) {
-					$.post('https://www.10k.pizza/api/User/savePortfolio', { portfolio : json_portfolio })
-					 .done(function(data) {
-					 	console.log("Portfolio saved to server.");
-					});
-				} else {
 					// Save to local storage
 					localStorage.setItem('cryptocurrency-portfolio', json_portfolio);
-				}
 
 				// Update the export field
 				updatePortfolioExportField(json_portfolio);
@@ -2891,17 +2781,8 @@
 
 				// Prepare the alerts for storage
 				var json_alerts = JSON.stringify(cryptofolio.alerts);
-
-				// If we're logged in, save to the server
-				if (!bLocalOnly && loggedIn()) {
-					$.post('https://www.10k.pizza/api/User/saveAlerts', { alerts : json_alerts })
-					 .done(function(data) {
-					 	console.log("Alerts saved to server.");
-					});
-				} else {
 					// Save to local storage
 					localStorage.setItem('cryptocurrency-alerts', json_alerts);
-				}
 			}
 
 			function restorePortfolioFromImport()
@@ -2947,14 +2828,6 @@
 					clearTradeManage();
 					load(true);
 					$('#successfulImportData').modal('show');
-
-					// If we're logged in, save to the server as well
-					if (loggedIn()) {
-						$.post('https://www.10k.pizza/api/User/savePortfolio', { portfolio : import_data })
-						 .done(function(data) {
-						 	console.log(data);
-						});
-					}
 				}
 				// If it doesn't pass, notify the user
 				else
@@ -2989,59 +2862,10 @@
 				// Strictly boolean
 				bForceLocal = (bForceLocal === true);
 
-				if (!bForceLocal && loggedIn())
+				if (!bForceLocal)
 				{
-					$.post('https://www.10k.pizza/api/User/getPortfolio').done(function(data) {
-						if (data.hasOwnProperty('success') && data['success'] && data.hasOwnProperty('portfolio'))
-						{
-							console.log("Retrieve portfolio from server.");
-
-							if (data.hasOwnProperty('settings') && data['settings']) {
-								localStorage.setItem('settings', data['settings']);
-								loadSettings();
-							}
-
-							if (data.hasOwnProperty('alerts') && data['alerts']) {
-								localStorage.setItem('cryptocurrency-alerts', data['alerts']);
-								loadAlerts();
-							}
-
-							// If we have a portfolio saved, load it
-							if (data['portfolio']) {
-								finishLoad(data['portfolio']);
-							} else {
-								// If we do not have a portfolio saved, but we have one stored locally,
-								// then save the local portfolio to the login
-								var json_portfolio = localStorage.getItem('cryptocurrency-portfolio');
-
-								if (json_portfolio && json_portfolio.length > 0)
-								{
-									// Load from local storage and save to the server
-									loadFromLocal();
-									save();
-
-									// Old method - give options
-									//$('#chooseLocalOrRemotePortfolio').modal('show');
-								}
-								else
-								{
-									finishLoad(data['portfolio']);
-								}
-							}
-						}
-						else
-						{
-							// Likely an expired session
-							console.log("Expired session, removing cookies.");
-
-							// Wipe the cookies
-							document.cookie = 'PHPSESSID=; logged_in=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-
-							// Reset relevant page elements & load from the local storage
 							updateUserProfile();
 							loadFromLocal();
-						}
-					});
 				} else {
 					loadFromLocal();
 				}
