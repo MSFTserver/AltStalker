@@ -10,7 +10,7 @@
 
 ##### - [Coming Soon Page](https://github.com/MSFTserver/AltStalker/tree/coming-soon)
 
-##### - ***API *(You're Here)**
+##### - **API *(You're Here)**
 
 ##### - [Error Pages](https://github.com/MSFTserver/AltStalker/tree/error-pages)
 
