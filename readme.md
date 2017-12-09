@@ -1,3 +1,17 @@
+## 6 branches being worked on for this Website:
+
+##### - [MASTER](https://github.com/MSFTserver/AltStalker)
+
+##### - **Crypto Compare Stats/Rank Page *(Your're Here)***
+
+##### - [Crypto Portfolio](https://github.com/MSFTserver/AltStalker/tree/Portfolio)
+
+##### - **Status Page *(You're Here)***
+
+##### - [Coming Soon Page](https://github.com/MSFTserver/AltStalker/tree/coming-soon)
+
+##### - [API *(Coming Soon)*](https://github.com/MSFTserver/AltStalker/tree/api)
+
 # UptimeRobot Status Page
 
 `UptimeRobot Status Page` is a simple html website that retrieve's [UptimeRobot](https://www.uptimerobot.com "Uptime Robot's Homepage")'s sensors via their API and turns it into a professional service status page .
