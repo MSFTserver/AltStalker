@@ -11,6 +11,7 @@ there are 6 total branches being worked on for this Website:
 - [Coming Soon Page](https://github.com/MSFTserver/AltStalker/tree/coming-soon)
 
 - [API *(Coming Soon)*](https://github.com/MSFTserver/AltStalker/tree/api)
+
 # coindexter
 
 An open source reskinned version of coinmarketcap.com with a few essential features.-
