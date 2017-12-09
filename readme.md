@@ -1,4 +1,4 @@
-## 6 branches being worked on for this Website:
+## 7 branches being worked on for this Website:
 
 ##### - [MASTER](https://github.com/MSFTserver/AltStalker)
 
@@ -11,6 +11,8 @@
 ##### - **Coming Soon Page *(You're Here)***
 
 ##### - [API *(Coming Soon)*](https://github.com/MSFTserver/AltStalker/tree/api)
+
+##### - [Error Pages](https://github.com/MSFTserver/AltStalker/tree/error-pages)
 
 Fantastic Coming Soon
 =====================
