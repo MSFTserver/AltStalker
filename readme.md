@@ -3,7 +3,7 @@
 <p>this repo includes all pages and sub-domains included on <a href="http://altstalker.com">AltStalker.com</a> each Repo/Branch has its own readme file included that explains what the Repo/Branch is and what it does, some of the repos have been forked, these include some Portfolio tools, price watchers, calculators, ect.
 <br/>
 <br/>
-the pages are split between different <a href="https://github.com/MSFTserver/AltStalker/#7-branches-being-worked-on-for-this-website">branches</a>, using the <a href="https://github.com/MSFTserver/AltStalker/tree/Empty-Repo">Empty-Repo</a> you can make your own branches and contribute your own work to this Website!</p>
+the pages are split between different <a href="https://github.com/MSFTserver/AltStalker/#7-branches-being-worked-on-for-this-website">branches</a>, also you can make your own branches and contribute your own work to this Website!</p>
 <hr/>
 <div align="center">
 
