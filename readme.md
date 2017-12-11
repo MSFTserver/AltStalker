@@ -4,8 +4,6 @@
 
 ##### - [Alt Stalker Home Page](https://github.com/MSFTserver/AltStalker/tree/AltStalker-Home)
 
-##### - [Alt Stalker Home Page](https://github.com/MSFTserver/AltStalker/tree/AltStalker-Home)
-
 ##### - [Crypto Compare Stats/Rank Page](https://github.com/MSFTserver/AltStalker/tree/CryptoCompareStats)
 
 ##### - [Crypto Portfolio](https://github.com/MSFTserver/AltStalker/tree/Portfolio)
