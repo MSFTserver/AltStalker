@@ -8,6 +8,8 @@
 
 ##### - **Crypto Portfolio *(Your're Here)***
 
+##### - [AltCoin Github Activity](https://github.com/MSFTserver/AltStalker/tree/altcoin-github-activity)
+
 ##### - [Status Page](https://github.com/MSFTserver/AltStalker/tree/status)
 
 ##### - [Coming Soon Page](https://github.com/MSFTserver/AltStalker/tree/coming-soon)
