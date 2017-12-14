@@ -12,7 +12,7 @@
 |[cryptofolio](https://github.com/Cybourgeoisie/cryptofolio)|[Cybourgeoisie](https://github.com/Cybourgeoisie)|[MIT](https://github.com/Cybourgeoisie/cryptofolio/blob/master/LICENSE)|     |[MSFTserver](https://github.com/MSFTserver)|
 |[fantastic-coming-soon-landing-page](https://github.com/Agence-Tandem/fantastic-coming-soon-landing-page)|[Agence-Tandem](https://github.com/Agence-Tandem)|[GPL-2.0](https://github.com/Agence-Tandem/fantastic-coming-soon-landing-page/blob/master/LICENSE)|     |[MSFTserver](https://github.com/MSFTserver)|
 |[StatusPage-UptimeRobot](https://github.com/kmain4/StatusPage-UptimeRobot)|[kmain4](https://github.com/kmain4)|none|     |[MSFTserver](https://github.com/MSFTserver)|
-|[compare_altcoin_development](https://github.com/wassname/compare_altcoin_development)|[wassname](https://github.com/wassname)|none|     |[MSFTserver](https://github.com/MSFTserver)|
+|[compare_altcoin_development](https://github.com/wassname/compare_altcoin_development)|[wassname](https://github.com/wassname)|[MIT](https://github.com/wassname/compare_altcoin_development/blob/master/LICENSE)|     |[MSFTserver](https://github.com/MSFTserver)|
 
 </div>
 <hr/>
