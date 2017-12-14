@@ -26,7 +26,7 @@ One disclaimer, these stats should just be a broad guide to which coin is develo
 
 Any problems, feel free to submit a PR.
 
-The [live site is here](https://activity.msft.online) but there's a snapshot below.
+The [live site is here](http://activity.msft.online) but there's a snapshot below.
 
 # Snapshot 2017-12-14
 
