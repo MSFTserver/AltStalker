@@ -1,6 +1,6 @@
 ### 7 branches being worked on for this Website:
 
-##### - **MASTER *(You're Here)***
+##### - [MASTER](https://github.com/MSFTserver/AltStalker/)
 
 ##### - [Alt Stalker Home Page](https://github.com/MSFTserver/AltStalker/tree/AltStalker-Home)
 
@@ -8,7 +8,7 @@
 
 ##### - [Crypto Portfolio](https://github.com/MSFTserver/AltStalker/tree/Portfolio)
 
-##### - [AltCoin Github Activity]((https://github.com/MSFTserver/AltStalker/tree/altcoin-github-activity))
+##### - **AltCoin Github Activity *(You're Here)***
 
 ##### - [Status Page](https://github.com/MSFTserver/AltStalker/tree/status)
 
