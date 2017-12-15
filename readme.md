@@ -18,7 +18,7 @@
 <hr/>
 <div align="center">
 
-### 7 branches being worked on for this Website:
+### 8 branches being worked on for this Website:
 
 ##### - **MASTER *(You're Here)***
 
