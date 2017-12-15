@@ -258,7 +258,12 @@ function refresh() {
 
         $("#go").prop('disabled', false);
         $("#go").text("Go")
-
+        var json = localStorage.getItem('gh-data2');
+        if (!json) {
+          document.getElementById("json").innerHTML = "no data, please hit go and this will be filled!";
+        } else {
+          document.getElementById("json").innerHTML = json;
+        }
         var markdown = makeMarkDownTable(data)
         console.log(markdown)
         // $('#markdown').val(markdown)

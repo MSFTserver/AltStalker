@@ -1,9 +1,9 @@
+<?php include_once ('php/config.php'); ?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <title>Compare github repository statistics</title>
-
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.13/css/jquery.dataTables.css">
         <link rel="stylesheet" href="css/style.css">
 
@@ -16,9 +16,7 @@
         </table>
 
 <hr />
-<div class="">
-    One disclaimer, these stats should just be a broad guide to which coin is developing or not. As reddit user u/Alonski said: "I'm not sure open issues is a very valid indication of success if people don't understand it. Some projects use issues as task management and not just bug tracking. Other than that this looks really cool"
-
+<div class="" style="display:none;">
     <h2>Gather new data (beta)</h2>
     Enter your github api token, update the csv inputs if you want, and hit go. Monitor the javascript console for errors and watch the countdown that replaces the go button.
     <div>
@@ -29,58 +27,7 @@
     <div>
       <label title="Enter each entry on seperate lines. Each line as 'name,url' where url is 'https://github.com/<orgname>/<reponame>' or 'https://github.com/orgs/<orgname>' or  'https://github.com/users/<username>' or a space seperated list 'https://github.com/<orgname>/<reponame1> https://github.com/<orgname>/<reponame2>">csv inputs</label>
       <textarea id="repos" style="width: 100%; height:200px;">
-#name,url/s
-Bitcoin,https://github.com/bitcoin/bitcoin
-Iota,https://github.com/orgs/iotaledger
-Ethereum,https://github.com/orgs/ethereum
-Ripple,https://github.com/orgs/ripple
-Litecoin,https://github.com/orgs/litecoin-project
-Monero,https://github.com/users/monero-project
-Dash,https://github.com/orgs/dashpay
-Augur,https://github.com/orgs/AugurProject
-Maidsafe,https://github.com/orgs/maidsafe
-Steem,https://github.com/orgs/steemit
-NEM,https://github.com/orgs/NemProject
-Factom,https://github.com/orgs/FactomProject
-Dogecoin,https://github.com/orgs/dogecoin
-Waves,https://github.com/orgs/wavesplatform
-ZCash,https://github.com/orgs/zcash
-DigixDAO,https://github.com/orgs/DigixGlobal
-Stellar Lumens,https://github.com/orgs/stellar
-Lisk,https://github.com/orgs/LiskHQ
-Bitshares,https://github.com/orgs/bitshares
-Golem,https://github.com/orgs/golemfactory
-PIVX,https://github.com/users/PIVX-Project
-Nxt,https://bitbucket.org/Jelurida/nxt
-Ardor,https://bitbucket.org/Jelurida/ardor
-Vertcoin,https://github.com/orgs/vertcoin
-Stratis,https://github.com/orgs/stratisproject
-VCash,https://github.com/orgs/openvcash
-BitcoinCash,https://github.com/orgs/bitcoincashorg
-Ethereum Classic,https://github.com/orgs/ethereumproject
-BitcoinUnlimited,https://github.com/orgs/BitcoinUnlimited
-Bitcoinclassic,https://github.com/orgs/bitcoinclassic
-BitcoinGold,https://github.com/orgs/BTCGPU
-NEO,https://github.com/orgs/neo-project
-Qtum,https://github.com/qtumproject/qtum
-LBRY Credits,https://github.com/orgs/lbryio
-OmiseGO,https://github.com/orgs/omise
-EOS,https://github.com/orgs/EOSIO
-Blocknet,https://github.com/users/atcsecure
-Syscoin,https://github.com/orgs/syscoin
-Gnosis,https://github.com/orgs/gnosis
-Qora,https://github.com/orgs/Qoracoin
-Storj,https://github.com/orgs/Storj
-Sia,https://github.com/NebulousLabs/Sia
-Status,https://github.com/orgs/status-im
-Cardano,https://github.com/input-output-hk/cardano-sl
-Pirl,https://github.com/orgs/pirl
-Skycoin,https://github.com/orgs/skycoin
-Emercoin,https://github.com/orgs/Emercoin
-Decent,https://github.com/orgs/DECENTfoundation
-HyperLedger,https://github.com/orgs/hyperledger
-Counterparty,https://github.com/orgs/CounterpartyXCP
-Expanse,https://github.com/orgs/expanse-org
+<?php echo $conf['coins-list'] ?>
     </textarea>
     </div>
     <div class="">
