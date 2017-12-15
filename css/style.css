@@ -73,3 +73,10 @@ div.dt-button-collection {
     background-color: #000000;
     box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
 }
+td {
+  border-left: 1px solid;
+  border-right: 1px solid;
+}
+th {
+  border: 1px solid;
+}

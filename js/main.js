@@ -15,7 +15,7 @@ var columns = [
         "title": "coin"
     }, {
         "data": "commits_per_week",
-        "title": "commits per week (for last year)"
+        "title": "commits per week<br />(for last year)"
     }, {
         "data": "watchers",
         "title": "watchers"
