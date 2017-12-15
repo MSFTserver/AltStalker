@@ -9,6 +9,7 @@
 
     </head>
     <body>
+      <div class="title">Site Updates at 00:00 UTC every day!</div>
         <table id="table" class="display" width="100%">
 
             <textbox id="markdown"></textbox>

@@ -2,27 +2,26 @@ body{
     background-color: #000000;
     color: #a5a5a5
 }
-
+.title {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: -30px;
+}
 table.dataTable.stripe tbody tr.even, table.dataTable.display tbody tr.even {
     background-color: #000000;
 }
-
 table.dataTable.stripe tbody tr.odd, table.dataTable.display tbody tr.odd {
     background-color: #000000;
 }
-
 table.dataTable.display tbody tr.odd > .sorting_1, table.dataTable.order-column.stripe tbody tr.odd > .sorting_1 {
     background-color: #000000;
 }
-
 table.dataTable.display tbody tr.even > .sorting_1, table.dataTable.order-column.stripe tbody tr.even > .sorting_1 {
     background-color: #000000;
 }
-
 table.dataTable.display tbody tr:hover > .sorting_1, table.dataTable.display tbody tr.even > .sorting_1:hover, table.dataTable.order-column.stripe tbody tr.even > .sorting_1:hover, table.dataTable.display tbody tr.odd > .sorting_1:hover, table.dataTable.order-column.stripe tbody tr.odd > .sorting_1:hover,table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
     background-color: #363636;
 }
-
 button.dt-button, div.dt-button, a.dt-button {
     border: 2px solid #a5a5a5;
     color: #a5a5a5;
@@ -34,7 +33,6 @@ button.dt-button, div.dt-button, a.dt-button {
     background-image: linear-gradient(to bottom, #000000 0%, #000000 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#000000', EndColorStr='#000000');
 }
-
 button.dt-button:hover:not(.disabled), div.dt-button:hover:not(.disabled), a.dt-button:hover:not(.disabled) {
     border: 2px solid #666;
     background-color: #a5a5a5;
@@ -46,7 +44,6 @@ button.dt-button:hover:not(.disabled), div.dt-button:hover:not(.disabled), a.dt-
     background-image: linear-gradient(to bottom, #a5a5a5 0%, #a5a5a5 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#a5a5a5', EndColorStr='#a5a5a5');
 }
-
 a {
     color: #22636c;
 }
