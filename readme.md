@@ -1,4 +1,4 @@
-### 7 branches being worked on for this Website:
+### 8 branches being worked on for this Website:
 
 ##### - [MASTER](https://github.com/MSFTserver/AltStalker/)
 
