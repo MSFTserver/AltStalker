@@ -19,9 +19,8 @@ table.dataTable.display tbody tr.even > .sorting_1, table.dataTable.order-column
     background-color: #000000;
 }
 
-table.dataTable.display tbody tr.even > .sorting_1:hover, table.dataTable.order-column.stripe tbody tr.even > .sorting_1:hover, table.dataTable.display tbody tr.odd > .sorting_1:hover, table.dataTable.order-column.stripe tbody tr.odd > .sorting_1:hover,table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
-    background-color: #a5a5a5;
-    color: #000000;
+table.dataTable.display tbody tr:hover ,table.dataTable.display tbody tr.even > .sorting_1:hover, table.dataTable.order-column.stripe tbody tr.even > .sorting_1:hover, table.dataTable.display tbody tr.odd > .sorting_1:hover, table.dataTable.order-column.stripe tbody tr.odd > .sorting_1:hover,table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
+    background-color: #363636;
 }
 
 button.dt-button, div.dt-button, a.dt-button {
